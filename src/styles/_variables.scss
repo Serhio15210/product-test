@@ -1,0 +1,32 @@
+// colors
+$white                  : #FFFFFF;
+$black                  : #000;
+$red                    : #D13028;
+$gray                   : #3b3a39;
+$green                  : #00ff00;
+$blue                   : #00aaff;
+$crimson                : #e93d82;
+$yellow                 : #ffff00;
+$red                    : #ff0000;
+$orange                 : #ff8c00;
+$sand                   : #C2B280;
+// transition
+$fast                   : .2s;
+$normal                 : .5s;
+
+
+// breakpoints
+$screen-bg-max          : 1919px;
+$screen-md-max          : 1600px;
+$screen-mac-max         : 1300px;
+$screen-sm-max          : 799px;
+$screen-ipad-pro        : 1023px;
+$screen-bg-min          : 1920px;
+
+// modes
+$bg-dark-mode:$black;
+$text-color-dark:$white;
+$bg-light-mode:$sand;
+$text-color-light:$black;
+$background-color: $bg-dark-mode;
+$text-color: $text-color-dark;

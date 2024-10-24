@@ -1,0 +1,56 @@
+@import "@/styles/media-queryes";
+@import "@/styles/variables";
+
+.card {
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-between;
+  border-radius: 10px;
+  border: 2px solid $gray;
+
+  transition: border-color $fast ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    border-color: $crimson ;
+  }
+
+  img {
+    width: 50%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    object-fit: cover;
+  }
+
+
+  .content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    flex:1;
+    .desc {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+
+      @include mobile{
+        -webkit-line-clamp: 5;
+      }
+    }
+  }
+  @media screen and (min-width: $screen-md-max ) {
+    h1{
+      line-height: 32px;
+      font-size: 1.7rem;
+    }
+    span{
+      font-size: 1rem;
+      line-height: 32px;
+    }
+
+  }
+
+}

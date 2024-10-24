@@ -1,0 +1,11 @@
+@import "@/styles/media-queryes";
+.productsContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 20px;
+  padding: 40px 0;
+
+  @include mobile{
+    grid-template-columns: 1fr;
+  }
+}

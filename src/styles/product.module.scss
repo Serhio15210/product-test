@@ -1,0 +1,39 @@
+@import "media-queryes";
+@import "variables";
+.productContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 20px;
+  .slider{
+    width: 40%;
+    //max-height: calc(100vh - 140px);
+
+  }
+  .info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex:1
+  }
+  @media screen and (min-width: $screen-md-max ) {
+    h1{
+      line-height: 32px;
+      font-size: 2rem;
+    }
+    span{
+      line-height: 32px;
+    }
+
+  }
+  @include tablet{
+    flex-direction: column;
+    .info{
+      width: 100%;
+    }
+    .slider{
+      width: 100%;
+    }
+  }
+}

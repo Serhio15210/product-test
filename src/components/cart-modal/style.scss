@@ -1,0 +1,30 @@
+@import "@/styles/variables";
+@import "@/styles/media-queryes";
+.dialog{
+  @include mobile{
+    padding: 10px;
+  }
+}
+.cart{
+  max-width: 35px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  img{
+    width: 100%;
+  }
+  .count{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background: $crimson;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    position: absolute;
+    right: -5px;
+    bottom: 5px;
+    font-size: 12px;
+  }
+}
