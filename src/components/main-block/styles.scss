@@ -1,0 +1,48 @@
+@import "@/styles/variables";
+@import "@/styles/media-queryes";
+.mainBlock{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px 6.25rem;
+  width: 100%;
+
+  max-height: calc($screen-bg-min / 2);
+  height: 100svh;
+  background: url("/main.jpg") 100% no-repeat;
+  background-position: top;
+  background-size: cover;
+  h1{
+    font-size: 4rem;
+    color: $crimson;
+    white-space: nowrap;
+
+  }
+  h2{
+    font-size: 2rem;
+  }
+  @include tablet{
+    background-size: cover;
+    background-position: left;
+    padding: 20px;
+  }
+  @include mobile{
+    padding: 10px;
+    h1{
+      font-size: 30px;
+      font-size: 10vw;
+    }
+    h2{
+      font-size: 20px;
+      font-size: 8vw;
+    }
+  }
+  @include small{
+    align-items: center;
+    padding-top: 0;
+    h2{
+      color: $crimson;
+    }
+  }
+}

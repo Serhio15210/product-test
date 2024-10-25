@@ -14,9 +14,9 @@
   background: $crimson;
   height: 100px;
   transform: translateY(-100%);
-  animation: hideHeader $fast ease-in-out forwards;
+  animation: hideMenu $fast ease-in-out forwards;
   &.open{
-    animation: showHeader $fast ease-in-out forwards;
+    animation: showMenu $fast ease-in-out forwards;
   }
   .navRow{
     display: flex;
@@ -36,7 +36,7 @@
     }
   }
 }
-@keyframes showHeader {
+@keyframes showMenu {
   from{
     transform: translateY(-100%);
   }
@@ -44,7 +44,7 @@
     transform: translateY(0);
   }
 }
-@keyframes hideHeader {
+@keyframes hideMenu {
   from {
     transform: translateY(0);
   }

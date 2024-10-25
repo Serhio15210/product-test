@@ -13,7 +13,10 @@ const ProductCard = ({card}) => {
     return (
         <div className="card" onClick={() => router.push(`/product/${card.id}`)}>
             <img src={card.images[0]?.replace("[", "").replace("]", "").replace(/\\\//g, "/").replace(/"/g, '')}
-                 alt={''} draggable={false}/>
+                 alt={''} draggable={false} onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/imgNotFound.png';
+            }}/>
             <div className="content">
                 <Flex direction="column" gap="1">
                     <Heading size="3">{card.title}</Heading>

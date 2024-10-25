@@ -25,7 +25,7 @@ export const useProducts = () => {
     })
     useEffect(() => {
         refetch()
-    }, [title,categoryId,filterPrice]);
+    }, [title,categoryId,filterPrice,limit]);
     const isLoading=isCategoryLoading||isProductLoading
-    return {data, isLoading,filterPrice,setFilterPrice,title,setTitle,categoryId,setCategoryId,categories}
+    return {data, isLoading,filterPrice,setFilterPrice,title,setTitle,categoryId,setCategoryId,categories,setLimit,limit}
 }

@@ -32,14 +32,21 @@ const ProductPage = () => {
                     <Carousel useKeyboardArrows={true} className={styles.slider}>
                         {data.images.map((item, index) => (
                             <div className="slide" key={index}>
-                                <img alt="sample_file" src={item} key={index} draggable={false}/>
+
+                                <img alt="sample_file"
+                                     src={item?.replace("[", "").replace("]", "").replace(/\\\//g, "/").replace(/"/g, '') || '/imgNotFound.png'}
+                                     key={index} draggable={false} onError={(e) => {
+                                    e.currentTarget.onerror = null;
+                                    e.currentTarget.src = '/imgNotFound.png';
+                                }}/>
+
                             </div>
                         ))}
                     </Carousel>
 
                     <div className={styles.info}>
                         <Heading>{data.title}</Heading>
-                        <Text as="p" size="8" weight="bold" color="crimson"> {data.price}$ </Text>
+                        <Text as="p" size="8" weight="bold" color="crimson"> {data.price} </Text>
                         <Text>Category: <Text color="crimson">{data.category.name}</Text></Text>
                         <Box>
                             <Text as="p" size="6" weight="bold" style={{marginBottom: 10}}> Choose size</Text>

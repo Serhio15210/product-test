@@ -23,7 +23,11 @@
         @content;
     }
 }
-
+@mixin small {
+    @media screen and (max-width: #{$screen-small}) {
+        @content;
+    }
+}
 @mixin tablet {
     @media screen and (max-width: #{$screen-ipad-pro}) {
         @content;

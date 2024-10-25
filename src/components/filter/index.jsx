@@ -10,7 +10,7 @@ const Filter = ({filterPrice, setFilterPrice, title, setTitle, categoryId, setCa
     return (
         <div className="filterContainer">
             <div className="searchRow">
-                <Heading size="8">WELCOME</Heading>
+                <Heading size="8">SEARCH</Heading>
                 <Form.Root onSubmit={(e) => {
                     e.preventDefault()
                     const data = Object.fromEntries(new FormData(e.currentTarget));
@@ -52,7 +52,7 @@ const Filter = ({filterPrice, setFilterPrice, title, setTitle, categoryId, setCa
                                value={categoryId}
                              onValueChange={setCategoryId}>
                     <Select.Trigger placeholder="Choose category" />
-                    <Select.Content>
+                    <Select.Content position="popper">
                         {categories?.map(item => <Select.Item key={item.id} value={item.id}>{item.name}</Select.Item>)}
 
                     </Select.Content>

@@ -6,12 +6,12 @@ import {Flex, IconButton, Spinner, Theme} from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import Image from "next/image";
 import Link from "next/link";
-import {Cross1Icon, HamburgerMenuIcon} from "@radix-ui/react-icons";
+import {HamburgerMenuIcon} from "@radix-ui/react-icons";
 import {useEffect, useState} from "react";
 import MobileMenu from "@/components/mobile-menu";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {useStore} from "@/zustand/store";
 import CartModal from "@/components/cart-modal";
+import {usePathname} from "next/navigation";
 
 
 const geistSans = localFont({
@@ -51,7 +51,7 @@ export default function RootLayout({children}) {
         };
     }, []);
     const toggleMenu = () => setOpenMobile(!openMobile)
-    const cart = useStore((state) => state.cart)
+    const pathname = usePathname()
     return (
         <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
@@ -61,9 +61,11 @@ export default function RootLayout({children}) {
                     {isMobile &&
                         <MobileMenu isOpen={openMobile} setIsOpen={setOpenMobile}/>
                     }
-                    <header>
-
-                        <Image src={'/logo.png'} alt={'logo'} width={80} height={80}/>
+                    <header className={`${pathname === '/' ? 'main' : ''}`}>
+                        <Link href={'/'}>
+                            <Image src={'/logo.png'} alt={'logo'} width={80} height={80} priority={true}
+                                   style={{cursor: 'pointer'}}/>
+                        </Link>
                         {isMobile ?
                             <Flex direction="row" align="center" gap="5">
                                 <CartModal/>
@@ -74,7 +76,7 @@ export default function RootLayout({children}) {
 
                             : <div className="navContainer">
                                 <Link href={'/'}>
-                                    <p>Home</p>
+                                    <p className={`${pathname === '/' ? 'active' : ''}`}>Home</p>
                                 </Link>
                                 <Link href={'/about'}>
                                     <p>About Us</p>
@@ -82,7 +84,7 @@ export default function RootLayout({children}) {
                                 <Link href={'/contacts'}>
                                     <p>Contacts</p>
                                 </Link>
-                               <CartModal/>
+                                <CartModal/>
 
                             </div>
                         }
