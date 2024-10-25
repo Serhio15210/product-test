@@ -44,7 +44,7 @@ export default function Home() {
                     data.length ?
                         <>
                             {data?.map(item => <ProductCard card={item} key={item.id}/>)}
-                            {data.length < 60 && <div   style={{margin:'auto',position:'absolute',bottom:0,left:0,right:0}}><Loader/></div>}
+                            {data.length < 60 && <div ref={ref}  style={{margin:'auto',position:'absolute',bottom:0,left:0,right:0}}><Loader/></div>}
 
                         </> :
                         <Heading>Not found(</Heading>
